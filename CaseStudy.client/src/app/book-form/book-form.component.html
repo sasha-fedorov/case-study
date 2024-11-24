@@ -1,0 +1,44 @@
+<form [formGroup]="bookForm" (ngSubmit)="$event.preventDefault(); onSubmit()">
+  <div class="mb-3 col-auto">
+    <label for="title" class="visually-hidden">Title</label>
+    <input
+      id="title"
+      type="text"
+      formControlName="title"
+      placeholder="Title"
+      class="form-control"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="author" class="visually-hidden">Author</label>
+    <input
+      id="author"
+      type="text"
+      formControlName="author"
+      placeholder="Author"
+      class="form-control"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="publish-year" class="visually-hidden">Publish year</label>
+    <input
+      id="publish-year"
+      type="number"
+      formControlName="publishYear"
+      placeholder="Publish year"
+      class="form-control"
+    />
+  </div>
+  <div class="mb-3">
+    <select class="form-select" formControlName="genre">
+      <option *ngFor="let i of bookGenres" [value]="i">
+        {{ i }}
+      </option>
+    </select>
+  </div>
+  <div class="d-grid mx-auto">
+    <button type="submit" class="btn btn-primary">
+      {{ book.Id ? "Update" : "Create" }}
+    </button>
+  </div>
+</form>

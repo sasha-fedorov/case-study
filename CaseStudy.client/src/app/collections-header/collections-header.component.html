@@ -1,0 +1,14 @@
+<div class="position-relative">
+  <h2 class="text-center">Collections</h2>
+  <div class="position-absolute top-0 end-0">
+    <button (click)="onToggle()" class="btn btn-success btn-sm">
+      <i class="bi bi-x-square" *ngIf="isAdding"></i>
+      <i class="bi bi-plus-square" *ngIf="!isAdding"></i>
+    </button>
+  </div>
+  <div class="form-group card mb-3" *ngIf="isAdding">
+    <div class="card-body">
+      <collection-form></collection-form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+@CaseStudy.Server_HostAddress = http://localhost:5258
+
+GET {{CaseStudy.Server_HostAddress}}/api/books/genres/
+Accept: application/json
+
+###

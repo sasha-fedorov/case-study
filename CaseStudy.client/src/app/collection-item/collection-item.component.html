@@ -1,0 +1,28 @@
+<div class="card mb-3">
+  <div class="card-body col-auto">
+    <h5>Name: {{ collection.Name }}</h5>
+    <div *ngIf="collection.Books && collection.Books.length > 0">
+      <p class="m-0">
+        <b>Books: </b>
+        <span
+          *ngFor="let book of collection.Books"
+          class="badge bg-warning text-dark mx-1"
+          >{{ book }}</span
+        >
+      </p>
+    </div>
+    <div class="position-absolute top-0 end-0 m-2">
+      <button (click)="onDelete()" class="btn btn-danger btn-sm mx-1">
+        <i class="bi bi-trash"></i>
+      </button>
+      <button (click)="onClickEditClose()" class="btn btn-primary btn-sm">
+        <i class="bi bi-x-square" *ngIf="isEditing"></i>
+        <i class="bi bi-pencil-square" *ngIf="!isEditing"></i>
+      </button>
+    </div>
+
+    <div *ngIf="isEditing" class="p-0 mt-3">
+      <collection-form [collection]="collection"></collection-form>
+    </div>
+  </div>
+</div>

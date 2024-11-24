@@ -1,0 +1,20 @@
+<form
+  [formGroup]="collectionForm"
+  (ngSubmit)="$event.preventDefault(); onSubmit()"
+>
+  <div class="mb-3 col-auto">
+    <label for="title" class="visually-hidden">Name</label>
+    <input
+      id="title"
+      type="text"
+      formControlName="name"
+      placeholder="Name"
+      class="form-control"
+    />
+  </div>
+  <div class="d-grid mx-auto">
+    <button type="submit" class="btn btn-primary">
+      {{ collection.Id ? "Update" : "Create" }}
+    </button>
+  </div>
+</form>
