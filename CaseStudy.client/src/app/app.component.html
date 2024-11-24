@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col p-3">
+      <books-header [bookGenres]="bookGenres"></books-header>
+      <book-list [books]="books" [bookGenres]="bookGenres"></book-list>
+    </div>
+    <div class="col p-3">
+      <collections-header></collections-header>
+      <collection-list [collections]="collections"></collection-list>
+    </div>
+  </div>
+</div>
